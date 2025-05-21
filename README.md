@@ -187,8 +187,8 @@ Refer to the **schematic PDF/code** for detailed **pin assignments**.
 ---
 
 ### **Get Involved**  
-🛠️ **Build Your Own**: Follow the [hardware guide](docs/HARDWARE.md) and [firmware setup](docs/SOFTWARE.md).  
-💬 **Questions?**  
+🛠️ **Build Your Own**: Follow the hardware guide and firmware setup.  
+💬 **Questions? or any tweeks recommendation**  
 - 📧 Email: [navinshanmugam23@pm.me](mailto:navinshanmugam23@pm.me)  
 - 📱 Telegram: [t.me/Navin233](https://t.me/Navin233)  
 
