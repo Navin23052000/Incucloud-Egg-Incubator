@@ -175,7 +175,7 @@ Refer to the **schematic PDF/code** for detailed **pin assignments**.
 - Create an **Arduino Cloud Account**.
 - Add **both devices** using:
   - **Device ID**
-  - **Thing Secret Code**
+  - **Device Secret Code**
 - Define **changing & stable values** (Limit: **10 variables per board**).
 
 ---
