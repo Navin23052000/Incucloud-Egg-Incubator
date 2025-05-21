@@ -181,7 +181,7 @@ Refer to the **schematic PDF/code** for detailed **pin assignments**.
 ---
 
 ## **License**
-This project is open-source under the **MIT License**.
+[This project is open-source under the **MIT License**.](https://github.com/Navin23052000/Incucloud-Egg-Incubator/blob/main/license.md)
 
 
 ---
