@@ -83,11 +83,11 @@ The IncuCloud hardware is built around a removable modular PCB system, designed 
 ✅ Open Design: All KiCad files and Gerbers provided for customization.
 
 
-### Download Design Files:
+## Download Design Files:
 
-## [Schematic and 3D Model and PCB PDF](https://github.com/Navin23052000/Incucloud-Egg-Incubator/blob/main/Incucould%20Screenshots%20on%20schematic%20and%20pcb%20and%203d%20view.pdf)
+### [Schematic and 3D Model and PCB PDF](https://github.com/Navin23052000/Incucloud-Egg-Incubator/blob/main/Incucould%20Screenshots%20on%20schematic%20and%20pcb%20and%203d%20view.pdf)
 
-## [Gerber Files](https://github.com/Navin23052000/Incucloud-Egg-Incubator/blob/main/gerber%20files%20for%20incucloud%202.zip)
+### [Gerber Files](https://github.com/Navin23052000/Incucloud-Egg-Incubator/blob/main/gerber%20files%20for%20incucloud%202.zip)
 
 
 
