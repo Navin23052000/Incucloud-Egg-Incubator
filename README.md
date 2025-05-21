@@ -40,7 +40,8 @@ To empower farmers, hobbyists, and engineers to:
 - **Manual Mode**: Fully customizable temperature, humidity, hatching days, lockdown day and rotation intervals.
 - **Real-Time Monitoring**: Track temperature, humidity, and rotation via a dashboard.  
 - **Remote Control**: Adjust settings from anywhere using a mobile app or web interface.  
-- **Data Logging**: Export historical incubation data to CSV or cloud storage.  
+- **Data Logging**: Export historical incubation data to CSV or cloud storage.
+- **Sensor Smoothing**: Takes 5 datas form the sensor and give the average of that.
 
 
 
@@ -61,7 +62,8 @@ To empower farmers, hobbyists, and engineers to:
 | Ventilation fan        | 8 inch HIGH SPEED ventilation fan 230v                    |  
 | Buzzer        | 5V Active Electromagnetic Buzzer                   |  
 | Setpdown BuckConverter        | LM2596HVS DC-DC Buck Converter                   |  
-
+|Push Buttons   |Tactile Push Button Switch 6x6x5|
+|RTC |DS3231 RTC Module Precise Real Time Clock I2C AT24C32|
 
 ---
 
@@ -83,23 +85,105 @@ The IncuCloud hardware is built around a removable modular PCB system, designed 
 
 ### Download Design Files:
 
-Schematics PDF
+## [Schematic and 3D Model and PCB PDF](https://github.com/Navin23052000/Incucloud-Egg-Incubator/blob/main/Incucould%20Screenshots%20on%20schematic%20and%20pcb%20and%203d%20view.pdf)
 
-Gerber Files
+## [Gerber Files](https://github.com/Navin23052000/Incucloud-Egg-Incubator/blob/main/gerber%20files%20for%20incucloud%202.zip)
 
-3D Model
 
-Order PCBs:
 
-Upload the Gerber files to a PCB manufacturer (e.g., JLCPCB, PCBWay).
+## Order PCBs
+Upload the Gerber files to a PCB manufacturer (e.g., robu.in (in India)).
+---
+## Photos of Hardware and menu Interface
 
-Use the BOM to source components from LCSC or local suppliers.
+---
+## Developement and Working principle  
 
-Assemble Modules:
+## **1. Development Process**
+### **Hardware Setup**
+- **Microcontrollers:** Arduino Nano & NodeMCU ESP32S.
+- **Sensors:** Temperature & Humidity monitoring.
+- **Actuators:** Heater, Ventilation Fan, Egg Rotation Motor, Humidifier.
+- **User Interface:** Three buttons - `MENU`, `INC`, and `DEC`.
+- **RTC Modules:**
+  - **One RTC** tracks days elapsed.
+  - **One RTC** manages egg rotation timing.
 
-Follow the assembly guide.
+### **Pin Configuration**
+Refer to the **schematic PDF/code** for detailed **pin assignments**.
 
-Use low-temperature solder for connectors to avoid damaging replaceable modules.
+### **IoT Integration**
+- Connected to **Arduino Cloud**.
+- Requires:
+  - **Arduino Cloud Account** setup.
+  - **Device ID & Thing Secret Code** for board linking.
+  - **Adding variables** (Limited to **10 per board**).
+- **Data Flow**:
+  - **Nano ESP32** receives control settings.
+  - **NodeMCU ESP32** manages cloud connectivity & dashboard visualization.
+  - **Total 19 variables** transferred.
+
+---
+
+## **2. Working Principle**
+### **Sensor & Actuator Management**
+- **Sensors monitor** temperature, humidity, time.
+- **Actuators regulate** environmental conditions (**heater, fan, humidifier, motor**).
+
+### **System Operations**
+#### **Normal Functioning**
+- **Data Transfer**:
+  - **Nano ESP32** → Sends live **temperature, humidity, hour, minute** data via **TX/RX** pins to **NodeMCU**.
+  - **NodeMCU ESP32** → Uploads data to **Arduino Cloud dashboard**.
+- **Day Countdown Calculation**:
+  - Done by **NodeMCU ESP32**, then relayed to **Arduino Nano**.
+
+#### **User Controls**
+- **Mode Selection**:
+  - **Auto Mode** → System follows pre-set parameters.
+  - **Manual Mode** → User adjusts settings.
+- **Trigger Start Day**:
+  - **Press `INC` & `DEC` simultaneously**.
+  - Enter **current Date, Month, Year**.
+- **Lockdown Phase**:
+  - If **lockdown day reached**:
+    - **Temperature & humidity auto-adjust**.
+    - **Egg rotation stops**.
+- **Hatching Completion**:
+  - If **hatching day passed**:
+    - **Beeping sound activates**.
+
+### **Temperature & Humidity Regulation**
+- Uses **three values** for control:
+  - **Set Value**
+  - **Tolerance Value**
+  - **Threshold Value**
+- **Regulation Logic**:
+  - If **sensor value < (Set Value + Tolerance)** → **Heater/Humidifier ON**.
+  - If **sensor value > (Set Value - Threshold)** → **Heater/Humidifier OFF**.
+- **Sensor Smoothing**:
+  - **Averages 5 sensor readings** to minimize frequent switching.
+
+---
+
+## **Installation & Setup**
+### **1. Hardware Connections**
+- Refer to the **provided schematic**.
+- Wire components according to pin mapping in **code/PDF**.
+
+### **2. Cloud Setup**
+- Create an **Arduino Cloud Account**.
+- Add **both devices** using:
+  - **Device ID**
+  - **Thing Secret Code**
+- Define **changing & stable values** (Limit: **10 variables per board**).
+
+---
+
+## **License**
+This project is open-source under the **MIT License**.
+
+
 ---
 
 ### **Get Involved**  
