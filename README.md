@@ -113,3 +113,12 @@ A cloud-connected smart egg incubator that lets you monitor temperature, humidit
    ```bash
    git clone https://github.com/your-username/incucloud.git
    cd incucloud
+---
+
+### **Get Involved**  
+🛠️ **Build Your Own**: Follow the [hardware guide](docs/HARDWARE.md) and [firmware setup](docs/SOFTWARE.md).  
+💬 **Questions?**  
+- 📧 Email: [your-email@example.com](mailto:your-email@example.com)  
+- 📱 Telegram: [t.me/your_telegram](https://t.me/your_telegram)  
+
+---
