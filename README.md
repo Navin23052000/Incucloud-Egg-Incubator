@@ -173,10 +173,11 @@ Refer to the **schematic PDF/code** for detailed **pin assignments**.
 
 ### **2. Cloud Setup**
 - Create an **Arduino Cloud Account**.
-- Add **both devices** using:
+- Add **both devices** using Arduino IOT Cloud:
   - **Device ID**
   - **Device Secret Code**
-- Define **changing & stable values** (Limit: **10 variables per board**).
+- Define **changing & stable values** (Limit: **10 variables per a Microcontroller**).(YOU HAVE TO PAY EXTRA TO ADD MORE VARIABLES)
+- I have used two board because I was fored to uses it because of the pricing that was done by arduino you can see the CODE to understand the concept.
 
 ---
 
