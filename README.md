@@ -92,7 +92,7 @@ The IncuCloud hardware is built around a removable modular PCB system, designed 
 
 
 ## Order PCBs
-Upload the Gerber files to a PCB manufacturer (e.g., robu.in (in India)).
+    Upload the Gerber files to a PCB manufacturer (e.g., robu.in (in India)).
 ---
 ## Photos of Hardware and menu Interface
 
