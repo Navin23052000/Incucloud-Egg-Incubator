@@ -166,7 +166,7 @@ Refer to the **schematic PDF/code** for detailed **pin assignments**.
 
 ---
 
-## **Installation & Setup**
+## **3. Installation & Setup**
 ### **1. Hardware Connections**
 - Refer to the **provided schematic**.
 - Wire components according to pin mapping in **code/PDF**.
